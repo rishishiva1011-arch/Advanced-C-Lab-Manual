@@ -1,5 +1,5 @@
-EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
-Aim:
+# EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
+## Aim:
 To write a C program to search a given element in the given linked list.
 
 Algorithm:
@@ -10,11 +10,45 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node
+{
+    char data;
+    struct Node *next;
+}*head;
+void search(char data)
+{
+   struct Node *temp;
+   temp=head;
+   int loc=1,flag=0;
+       while(temp!=NULL)
+       {
+          if(temp->data == data)
+          {
+              flag=1;
+              break;
+          }
+          else
+          {
+              temp=temp->next;
+              loc++;
+          }
+       }  
+}
+if(flag==0)
+{
+    printf("Item not found");
+}
+else
+{
+    printf("item %c found at location %d",data,loc);
+}
+}
+```
 
 Output:
 
-//paste your output here
+<img width="1371" height="834" alt="image" src="https://github.com/user-attachments/assets/b60feec7-497b-4cbb-8aa1-070a9582a97c" />
 
 
 
@@ -34,11 +68,37 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node{
+    int data;
+    struct Node *next;
+}*head;
+void insert(int data)
+{
+     struct Node *newnode,*temp;
+     newnode=(struct Node *)malloc(sizeof(struct Node));
+     newnode->data=data;
+     newnode->next=NULL;
+     if(head==NULL)
+     {
+       head=newnode;
+     }
+     else
+     {
+       temp=head;
+       while(temp->next != NULL)
+       {
+            temp=temp->next;
+       }
+       temp->next=newnode;
+     }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="855" height="882" alt="image" src="https://github.com/user-attachments/assets/a6cbd1d7-82bc-4cd1-a5b1-f917ffe960e2" />
+
 
  
 Result:
@@ -58,11 +118,27 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    char data;
+}*head;
+void display()
+{
+    struct Node *temp=head;
+    while(temp!=NULL)
+    {
+        printf("%c ",temp->data);
+        temp=temp->next;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="687" height="885" alt="image" src="https://github.com/user-attachments/assets/7f97b410-1dca-4cd5-854e-40109af153de" />
 
 
 Result:
@@ -83,11 +159,40 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    int data;
+}*head;
+void insert(int data)
+{
+    struct Node *temp,*newnode=(struct Node*)malloc(sizeof(struct Node));
+    newnode->data=data;
+    newnode->next=NULL;
+    newnode->prev=NULL;
+if(head==NULL)
+{
+    head=newnode;
+}
+else
+{
+   temp=head;
+   while(temp->next!=NULL)
+   {
+    temp=temp->next;
+   }
+temp->next=newnode;
+newnode->prev=temp;
+}
+}
+```
 
 Output:
 
-//paste your output here
+<img width="855" height="882" alt="image" src="https://github.com/user-attachments/assets/ae68a723-6006-49b7-8dda-c8c77b0cae76" />
+
 
 
 Result:
@@ -125,13 +230,53 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *next;
+    int data;
+}*head;
+void delete(int data) {
+    struct Node *current, *prev;
+
+    if (head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+
+    if (head->data == data) {
+        current = head;
+        head = head->next;
+        free(current);
+        printf("Element %d deleted\n", data);
+        return;
+    }
+
+    prev = head;
+    current = head->next;
+    while (current != NULL) {
+        if (current->data == data) {
+            prev->next = current->next;
+            free(current);
+            printf("Element %d deleted\n", data);
+            return;
+        }
+        prev = current;
+        current = current->next;
+    }
+
+    printf("Element %d not found in the list\n", data);
+}
+```
 
 Output:
 
-//paste your output here
+<img width="456" height="426" alt="image" src="https://github.com/user-attachments/assets/05f8ddb1-e533-4a55-a446-692e609d02ac" />
 
+<br>
+<br>
 
+<img width="909" height="402" alt="image" src="https://github.com/user-attachments/assets/9b54c30f-eefb-4ed1-a653-aa27817870a2" />
 
 
 
