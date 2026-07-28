@@ -13,12 +13,21 @@ To write a C program to display stack elements using an array.
  
 ### Program:
 
-//type your code here
+```
+void display() {
+    if (top == -1) {
+        printf("Stack is empty\n");
+        return;
+    }
+    for (int i = top; i >= 0; i--) {
+        printf(" %d \n", stack[i]);
+    }
+}
+```
 
 ### Output:
 
-//paste your output here
-
+<img width="675" height="883" alt="Screenshot 2026-07-29 035011" src="https://github.com/user-attachments/assets/a07a85ea-895f-4f65-b71f-a660250886c3" />
 
 
 ### Result:
@@ -36,13 +45,24 @@ To create a C program to push the given element in to a stack using array.
  
 ### Program:
 
-//type your code here
+```
+void push (float data)
+{
+    if (top == size-1 )
+    {
+    printf("stack is full\n");
+    }
+    else
+    {
+        top = top +1;
+        stack[top] = data;
+    }
+}
+```
 
 ### Output:
 
-//paste your output here
-
-
+<img width="705" height="882" alt="image" src="https://github.com/user-attachments/assets/3c8ada45-2f06-417b-bf31-38a4e1e3766d" />
 
 
 ### Result:
@@ -62,11 +82,25 @@ To write a C program to display queue elements using array
  
 ### Program:
 
-//type your code here
+```
+void display()
+{
+    int i=1;
+    if(front==-1||front>rear)
+    printf("No elements to display\n");
+    else
+    {
+        for(i=front;i<=rear;i++)
+        {
+            printf("%c ", queue[i]);
+        }
+    }
+}
+```
 
 ### Output:
 
-//paste your output here
+<img width="1251" height="882" alt="image" src="https://github.com/user-attachments/assets/c59afa2f-097e-4056-84a8-166b7e16ea61" />
 
 
 ### Result:
@@ -86,11 +120,23 @@ To write a C program to insert elements in queue using array.
 
 ### Program:
 
-//type your code here
+```
+void enqueue(float data)
+{
+    if (rear<size-1)
+    {
+        if(front==-1)
+        front=0;
+        rear+=1;
+        queue[rear]=data;
+    }
+}
+```
 
 ### Output:
 
-//paste your output here
+<img width="1335" height="1584" alt="image" src="https://github.com/user-attachments/assets/03a3c8c5-49f0-4a0c-b495-e34daf4fee97" />
+
 
 ### Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -114,18 +160,30 @@ o	If the front pointer is -1, it means the queue is empty, and there are no elem
 o	If the queue is not empty, the element at the front index is deleted.
 o	Increment the front pointer by 1 to remove the element and point to the next element in the queue.
 3.	Check if the Queue Becomes Empty After Deletion:
-o	After deletion, check if the front pointer has passed the rear pointer (front > rear). If this is true, reset both front and rear to -1, indicating that the queue is now empty.
+o	After deletion, check if the front pointer has passed the rear pointer (front > rear). If this is true, reset both front and rear to -1, indicating that the queue is now empty.               
 4.	End the Function.
 
 
 
 ### Program:
 
-//type your code here
+```
+void deque() {
+    if (front == -1) {
+        printf("Queue is empty\n");
+        return;
+    }
+    front++;
+    if (front > rear) {
+        front = rear = -1;
+    }
+}
+```
 
 ### Output:
 
-//paste your output here
+<img width="1332" height="1116" alt="image" src="https://github.com/user-attachments/assets/d6d35874-cd4e-495c-bc50-cd25d6a70626" />
+
 
 
 ### Result:
