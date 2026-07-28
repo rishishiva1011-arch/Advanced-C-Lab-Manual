@@ -16,12 +16,44 @@ Else
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+struct eligible {
+    int age;
+    char name[50];
+};
+
+int main() {
+    int i, n;
+    struct eligible e[100]; 
+    printf("Enter number of persons: ");
+    scanf("%d", &n);
+    for(i = 0; i < n; i++) {
+        printf("\nEnter name of person %d: ", i + 1);
+        scanf("%s", e[i].name);
+        printf("Enter age of person %d: ", i + 1);
+        scanf("%d", &e[i].age);
+    }
+    printf("\n--- Vaccine Eligibility Check ---\n");
+    for(i = 0; i < n; i++) {
+        printf("\nName: %s", e[i].name);
+        printf("\nAge: %d", e[i].age);
+
+        if(e[i].age <= 6)
+            printf("\nVaccine Eligibility: No\n");
+        else
+            printf("\nVaccine Eligibility: Yes\n");
+    }
+
+    return 0;
+}
+```
 
 
 Output:
 
-//paste your output here
+<img width="211" height="290" alt="image" src="https://github.com/user-attachments/assets/e8385078-b377-4b14-808f-20280d3f470a" />
+
 
 
 Result:
@@ -43,17 +75,35 @@ Algorithm:
 7.	Return 0
  
 Program:
+```
+#include <stdio.h>
+struct numbers {
+    int a;
+    int b;
+};
+struct numbers add(struct numbers n) {
+    struct numbers result;
+    result.a = n.a + n.b;
+    return result;
+}
 
-//type your code here
+int main() {
+    struct numbers n, sum;
+    printf("Enter the value of a: ");
+    scanf("%d", &n.a);
+    printf("Enter the value of b: ");
+    scanf("%d", &n.b);
+    sum = add(n);
+    printf("Sum = %d\n", sum.a);
 
-
-
+    return 0;
+}
+```
 
 Output:
 
 
-//paste your output here
-
+<img width="223" height="120" alt="image" src="https://github.com/user-attachments/assets/bb9d5e6a-ef50-491e-9e8e-849eded2d0de" />
 
 
 
@@ -86,23 +136,29 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
-
-
-
+```
+#include <stdio.h>
+ int main()
+ {
+    FILE *fp;
+    char fn[20];
+    scanf("%s",fn);
+    fp=fopen(fn,"w");
+    if(fp!=NULL)
+    {
+        printf("%s File Created Successfully\n",fn);
+        printf("%s File Opened\n",fn);
+    }
+    fclose(fp);
+    printf("%s File Closed",fn);
+    
+    return 0;
+ }
+```
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
-
-
-
+<img width="280" height="110" alt="image" src="https://github.com/user-attachments/assets/cbd1d4f4-d0ad-4433-8e87-c9c53569dc62" />
 
 
 
@@ -133,19 +189,38 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
-
+```
+#include <stdio.h>
+ int main()
+ {
+    FILE *fp;
+    char fn[20];
+    int users;
+    scanf("%s",fn);
+    fp=fopen(fn,"w");
+    if(fp!=NULL)
+    {
+        printf("%s Opened\n",fn);
+    }
+    scanf("%d",&users);
+    char data[100];
+    for(int i=0;i<users;i++)
+    {
+        scanf("%s",data);
+        fprintf(fp,"%s\n",data);
+    }
+    fclose(fp);
+    printf("Data added Successfully");
+    return 0;
+ }
+```
 
 
 
 Output:
 
 
-//paste your output here
-
-
-
-
+<img width="245" height="95" alt="image" src="https://github.com/user-attachments/assets/586f3091-518b-4c2b-8b11-2c291cf6c397" />
 
 
 Result:
@@ -187,17 +262,44 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct subject {
+    char name[50];
+    int marks;
+};
 
-
-
+int main() {
+    int n, i;
+    struct subject *s;
+    printf("Enter the number of subjects: ");
+    scanf("%d", &n);
+    
+    s = (struct subject *)malloc(n * sizeof(struct subject));
+    
+    if (s == NULL) {
+       printf("Memory allocation failed!\n");
+       return 1;
+    }
+    for (i = 0; i < n; i++){
+        printf("\nEnter name of subject %d: ", i+1);
+        scanf("%s", s[i].name);
+        printf("Enter marks for %s: ",s[i].name);
+        scanf("%d", &s[i].marks);
+}
+printf("\nSubject Details:\n");
+for (i = 0; i < n; i++) {
+    printf("Subject: %s, Marks: %d\n", s[i].name, s[i].marks);
+}
+free(s);
+return 0;
+}
+```
 
 Output:
 
-
-//paste your output here
-
-
+<img width="227" height="272" alt="image" src="https://github.com/user-attachments/assets/e9f64810-9055-44f2-9c14-56f164c65db7" />
 
 
 
