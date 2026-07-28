@@ -196,8 +196,7 @@ int main(void) {
 ### Result:
 Thus, the program is verified successfully
  
-# EXP NO:9 C PROGRAM PRINT A PATTERN OF NUMBERS FROM 1 TO N AS
-SHOWN BELOW.
+# EXP NO:9 C PROGRAM PRINT A PATTERN OF NUMBERS FROM 1 TO N AS SHOWN BELOW.
 ### Aim:
 To write a C program to print a pattern of numbers from 1 to n as shown below.
 ### Algorithm:
